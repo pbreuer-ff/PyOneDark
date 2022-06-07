@@ -50,7 +50,7 @@ from . functions_main_window import *
 class SetupMainWindow:
     def __init__(self):
         super().__init__()
-        # SETUP MAIN WINDOw
+        # SETUP MAIN WINDOW
         # Load widgets from "gui\uis\main_window\ui_main.py"
         # ///////////////////////////////////////////////////////////////
         self.ui = UI_MainWindow()
@@ -77,9 +77,9 @@ class SetupMainWindow:
         },
         {
             "btn_icon" : "icon_add_user.svg",
-            "btn_id" : "btn_add_user",
-            "btn_text" : "Add Users",
-            "btn_tooltip" : "Add users",
+            "btn_id" : "btn_capture_keyframe",
+            "btn_text" : "Capture keyframes",
+            "btn_tooltip" : "Capture keyframes",
             "show_top" : True,
             "is_active" : False
         },
@@ -200,7 +200,7 @@ class SetupMainWindow:
         if self.settings["custom_title_bar"]:
             self.ui.title_bar.set_title(self.settings["app_name"])
         else:
-            self.ui.title_bar.set_title("Welcome to PyOneDark")
+            self.ui.title_bar.set_title("Flylapse App - Freefly Systems")
 
         # LEFT COLUMN SET SIGNALS
         # ///////////////////////////////////////////////////////////////

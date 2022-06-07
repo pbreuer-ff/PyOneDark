@@ -1,10 +1,10 @@
 {
-    "app_name": "PyOneDark - Modern GUI",
+    "app_name": "Flylapse App - Freefly Systems",
     "version" : "v1.0.0",
-    "copyright" : "By: Wanderson M. Pimenta",
-    "year" : 2021,
+    "copyright" : "Freefly Systems Inc.",
+    "year" : 2022,
     "theme_name" : "default",
-    "custom_title_bar": true,
+    "custom_title_bar": false,
     "startup_size": [
         1400,
         720

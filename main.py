@@ -103,8 +103,8 @@ class MainWindow(QMainWindow):
             # Load Page 2
             MainFunctions.set_page(self, self.ui.load_pages.page_2)
 
-        # LOAD USER PAGE
-        if btn.objectName() == "btn_add_user":
+        # LOAD KEYFRAME CAPTURE PAGE
+        if btn.objectName() == "btn_capture_keyframe":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
@@ -214,7 +214,7 @@ if __name__ == "__main__":
     # APPLICATION
     # ///////////////////////////////////////////////////////////////
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setWindowIcon(QIcon("Freefly_Logo.ico"))
     window = MainWindow()
 
     # EXEC APP

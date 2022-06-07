@@ -21,6 +21,8 @@ import os
 
 # APP SETTINGS
 # ///////////////////////////////////////////////////////////////
+
+
 class Settings(object):
     # APP PATH
     # ///////////////////////////////////////////////////////////////
@@ -28,8 +30,9 @@ class Settings(object):
     app_path = os.path.abspath(os.getcwd())
     settings_path = os.path.normpath(os.path.join(app_path, json_file))
     if not os.path.isfile(settings_path):
-        print(f"WARNING: \"settings.json\" not found! check in the folder {settings_path}")
-    
+        print(
+            f"WARNING: \"settings.json\" not found! check in the folder {settings_path}")
+
     # INIT SETTINGS
     # ///////////////////////////////////////////////////////////////
     def __init__(self):
@@ -37,10 +40,44 @@ class Settings(object):
 
         # DICTIONARY WITH SETTINGS
         # Just to have objects references
-        self.items = {}
+        self.items = {
+            "app_name": "Flylapse App - Freefly Systems",
+            "version": "v1.0.0",
+            "copyright": "Freefly Systems Inc.",
+            "year": 2022,
+            "theme_name": "default",
+            "custom_title_bar": False,
+            "startup_size": [
+                1400,
+                720
+            ],
+            "minimum_size": [
+                960,
+                540
+            ],
+            "lef_menu_size": {
+                "minimum": 50,
+                "maximum": 240
+            },
+            "left_menu_content_margins": 3,
+            "left_column_size": {
+                "minimum": 0,
+                "maximum": 240
+            },
+            "right_column_size": {
+                "minimum": 0,
+                "maximum": 240
+            },
+            "time_animation": 500,
+            "font": {
+                "family": "Segoe UI",
+                "title_size": 10,
+                "text_size": 9
+            }
+        }
 
         # DESERIALIZE
-        self.deserialize()
+        # self.deserialize()
 
     # SERIALIZE JSON
     # ///////////////////////////////////////////////////////////////
