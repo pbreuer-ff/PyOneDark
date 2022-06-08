@@ -60,7 +60,7 @@ class SetupMainWindow:
     # ///////////////////////////////////////////////////////////////
     add_left_menus = [
         {
-            "btn_icon" : "icon_home.svg",
+            "btn_icon" : "page1_icon.svg",
             "btn_id" : "btn_page1",
             "btn_text" : "Start",
             "btn_tooltip" : "Start",
@@ -68,7 +68,7 @@ class SetupMainWindow:
             "is_active" : True
         },
         {
-            "btn_icon" : "icon_widgets.svg",
+            "btn_icon" : "page2_icon.svg",
             "btn_id" : "btn_page2",
             "btn_text" : "Connect",
             "btn_tooltip" : "Connect",
@@ -76,7 +76,7 @@ class SetupMainWindow:
             "is_active" : False
         },
         {
-            "btn_icon" : "icon_add_user.svg",
+            "btn_icon" : "page3_icon.svg",
             "btn_id" : "btn_page3",
             "btn_text" : "Capture keyframes",
             "btn_tooltip" : "Capture keyframes",
@@ -84,7 +84,7 @@ class SetupMainWindow:
             "is_active" : False
         },
         {
-            "btn_icon" : "icon_file.svg",
+            "btn_icon" : "page4_icon.svg",
             "btn_id" : "btn_page4",
             "btn_text" : "Plan",
             "btn_tooltip" : "Plan",
@@ -92,7 +92,7 @@ class SetupMainWindow:
             "is_active" : False
         },
         {
-            "btn_icon" : "icon_folder_open.svg",
+            "btn_icon" : "page5_icon.svg",
             "btn_id" : "btn_page5",
             "btn_text" : "Fly",
             "btn_tooltip" : "Fly",
@@ -100,7 +100,7 @@ class SetupMainWindow:
             "is_active" : False
         },
         {
-            "btn_icon" : "icon_save.svg",
+            "btn_icon" : "page6_icon.svg",
             "btn_id" : "btn_page6",
             "btn_text" : "Review",
             "btn_tooltip" : "Review",
