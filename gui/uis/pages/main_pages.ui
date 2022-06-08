@@ -132,7 +132,7 @@
           <item>
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Welcome To PyOneDark GUI</string>
+             <string>Welcome to Flylapse</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>

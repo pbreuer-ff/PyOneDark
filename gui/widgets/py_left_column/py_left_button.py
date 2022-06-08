@@ -1,50 +1,36 @@
-# ///////////////////////////////////////////////////////////////
-#
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
-# ///////////////////////////////////////////////////////////////
-
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
 from qt_core import *
 
 # PY TITLE BUTTON
 # ///////////////////////////////////////////////////////////////
+
+
 class PyLeftButton(QPushButton):
     def __init__(
         self,
         parent,
-        app_parent = None,
-        tooltip_text = "",
-        btn_id = None,
-        width = 30,
-        height = 30,
-        radius = 8,
-        bg_color = "#343b48",
-        bg_color_hover = "#3c4454",
-        bg_color_pressed = "#2c313c",
-        icon_color = "#c3ccdf",
-        icon_color_hover = "#dce1ec",
-        icon_color_pressed = "#edf0f5",
-        icon_color_active = "#f5f6f9",
-        icon_path = "no_icon.svg",
-        dark_one = "#1b1e23",
-        context_color = "#568af2",
-        text_foreground = "#8a95aa",
-        is_active = False
+        app_parent=None,
+        tooltip_text="",
+        btn_id=None,
+        width=30,
+        height=30,
+        radius=8,
+        bg_color="#343b48",
+        bg_color_hover="#3c4454",
+        bg_color_pressed="#2c313c",
+        icon_color="#c3ccdf",
+        icon_color_hover="#dce1ec",
+        icon_color_pressed="#edf0f5",
+        icon_color_active="#f5f6f9",
+        icon_path="no_icon.svg",
+        dark_one="#1b1e23",
+        context_color="#568af2",
+        text_foreground="#8a95aa",
+        is_active=False
     ):
         super().__init__()
-        
+
         # SET DEFAULT PARAMETERS
         self.setFixedSize(width, height)
         self.setCursor(Qt.PointingHandCursor)
@@ -53,7 +39,7 @@ class PyLeftButton(QPushButton):
         # PROPERTIES
         self._bg_color = bg_color
         self._bg_color_hover = bg_color_hover
-        self._bg_color_pressed = bg_color_pressed        
+        self._bg_color_pressed = bg_color_pressed
         self._icon_color = icon_color
         self._icon_color_hover = icon_color_hover
         self._icon_color_pressed = icon_color_pressed
@@ -100,7 +86,7 @@ class PyLeftButton(QPushButton):
         paint = QPainter()
         paint.begin(self)
         paint.setRenderHint(QPainter.RenderHint.Antialiasing)
-        
+
         if self._is_active:
             # BRUSH
             brush = QBrush(QColor(self._bg_color_pressed))
@@ -113,8 +99,8 @@ class PyLeftButton(QPushButton):
         paint.setPen(Qt.NoPen)
         paint.setBrush(brush)
         paint.drawRoundedRect(
-            rect, 
-            self._set_border_radius, 
+            rect,
+            self._set_border_radius,
             self._set_border_radius
         )
 
@@ -131,12 +117,12 @@ class PyLeftButton(QPushButton):
         if event == QEvent.Enter:
             self._set_bg_color = self._bg_color_hover
             self._set_icon_color = self._icon_color_hover
-            self.repaint()         
+            self.repaint()
         elif event == QEvent.Leave:
             self._set_bg_color = self._bg_color
             self._set_icon_color = self._icon_color
             self.repaint()
-        elif event == QEvent.MouseButtonPress:            
+        elif event == QEvent.MouseButtonPress:
             self._set_bg_color = self._bg_color_pressed
             self._set_icon_color = self._icon_color_pressed
             self.repaint()
@@ -192,10 +178,10 @@ class PyLeftButton(QPushButton):
         else:
             painter.fillRect(icon.rect(), self._set_icon_color)
         qp.drawPixmap(
-            (rect.width() - icon.width()) / 2, 
+            (rect.width() - icon.width()) / 2,
             (rect.height() - icon.height()) / 2,
             icon
-        )        
+        )
         painter.end()
 
     # SET ICON
@@ -225,6 +211,8 @@ class PyLeftButton(QPushButton):
 
 # TOOLTIP
 # ///////////////////////////////////////////////////////////////
+
+
 class _ToolTip(QLabel):
     # TOOLTIP / LABEL StyleSheet
     style_tooltip = """ 
@@ -239,9 +227,10 @@ class _ToolTip(QLabel):
         font: 800 9pt "Segoe UI";
     }}
     """
+
     def __init__(
         self,
-        parent, 
+        parent,
         tooltip,
         dark_one,
         context_color,
@@ -251,9 +240,9 @@ class _ToolTip(QLabel):
 
         # LABEL SETUP
         style = self.style_tooltip.format(
-            _dark_one = dark_one,
-            _context_color = context_color,
-            _text_foreground = text_foreground
+            _dark_one=dark_one,
+            _context_color=context_color,
+            _text_foreground=text_foreground
         )
         self.setObjectName(u"label_tooltip")
         self.setStyleSheet(style)

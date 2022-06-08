@@ -196,7 +196,7 @@ class Ui_MainPages(object):
 
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
-        self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To PyOneDark GUI", None))
+        self.label.setText(QCoreApplication.translate("MainPages", u"Welcome to Flylapse", None))
         self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
         self.empty_page_label1.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
         self.title_label.setText(QCoreApplication.translate("MainPages", u"Custom Widgets Page", None))
