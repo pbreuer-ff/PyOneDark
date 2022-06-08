@@ -32,7 +32,7 @@
    <item>
     <widget class="QStackedWidget" name="pages">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page_1">
       <property name="styleSheet">
@@ -58,14 +58,14 @@
         <widget class="QFrame" name="welcome_base">
          <property name="minimumSize">
           <size>
-           <width>300</width>
-           <height>150</height>
+           <width>432</width>
+           <height>288</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>300</width>
-           <height>150</height>
+           <width>432</width>
+           <height>288</height>
           </size>
          </property>
          <property name="frameShape">
@@ -94,14 +94,14 @@
            <widget class="QFrame" name="logo">
             <property name="minimumSize">
              <size>
-              <width>300</width>
-              <height>120</height>
+              <width>432</width>
+              <height>288</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>300</width>
-              <height>120</height>
+              <width>432</width>
+              <height>288</height>
              </size>
             </property>
             <property name="frameShape">

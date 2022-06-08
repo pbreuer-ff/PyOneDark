@@ -1,23 +1,23 @@
-# ///////////////////////////////////////////////////////////////
-#
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
-# ///////////////////////////////////////////////////////////////
+# -*- coding: utf-8 -*-
 
-# IMPORT QT CORE
-# ///////////////////////////////////////////////////////////////
-from qt_core import *
+################################################################################
+## Form generated from reading UI file 'main_pages.ui'
+##
+## Created by: Qt User Interface Compiler version 6.2.4
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
+    QScrollArea, QSizePolicy, QStackedWidget, QVBoxLayout,
+    QWidget)
 
 class Ui_MainPages(object):
     def setupUi(self, MainPages):
@@ -39,8 +39,8 @@ class Ui_MainPages(object):
         self.page_1_layout.setContentsMargins(5, 5, 5, 5)
         self.welcome_base = QFrame(self.page_1)
         self.welcome_base.setObjectName(u"welcome_base")
-        self.welcome_base.setMinimumSize(QSize(300, 150))
-        self.welcome_base.setMaximumSize(QSize(300, 150))
+        self.welcome_base.setMinimumSize(QSize(432, 288))
+        self.welcome_base.setMaximumSize(QSize(432, 288))
         self.welcome_base.setFrameShape(QFrame.NoFrame)
         self.welcome_base.setFrameShadow(QFrame.Raised)
         self.center_page_layout = QVBoxLayout(self.welcome_base)
@@ -49,8 +49,8 @@ class Ui_MainPages(object):
         self.center_page_layout.setContentsMargins(0, 0, 0, 0)
         self.logo = QFrame(self.welcome_base)
         self.logo.setObjectName(u"logo")
-        self.logo.setMinimumSize(QSize(300, 120))
-        self.logo.setMaximumSize(QSize(300, 120))
+        self.logo.setMinimumSize(QSize(432, 288))
+        self.logo.setMaximumSize(QSize(432, 288))
         self.logo.setFrameShape(QFrame.NoFrame)
         self.logo.setFrameShadow(QFrame.Raised)
         self.logo_layout = QVBoxLayout(self.logo)
