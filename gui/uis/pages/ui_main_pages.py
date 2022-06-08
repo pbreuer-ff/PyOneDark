@@ -1,23 +1,6 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'main_pages.ui'
-##
-## Created by: Qt User Interface Compiler version 6.2.4
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QScrollArea, QSizePolicy, QStackedWidget, QVBoxLayout,
-    QWidget)
+# IMPORT QT CORE
+# ///////////////////////////////////////////////////////////////
+from qt_core import *
 
 class Ui_MainPages(object):
     def setupUi(self, MainPages):
@@ -72,11 +55,43 @@ class Ui_MainPages(object):
         self.pages.addWidget(self.page_1)
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
+        self.page_2.setStyleSheet(u"QFrame {\n"
+"	font-size: 16pt;\n"
+"}")
         self.page_2_layout = QVBoxLayout(self.page_2)
-        self.page_2_layout.setSpacing(5)
         self.page_2_layout.setObjectName(u"page_2_layout")
-        self.page_2_layout.setContentsMargins(5, 5, 5, 5)
-        self.scroll_area = QScrollArea(self.page_2)
+        self.empty_page_label = QLabel(self.page_2)
+        self.empty_page_label.setObjectName(u"empty_page_label")
+        font = QFont()
+        font.setPointSize(16)
+        self.empty_page_label.setFont(font)
+        self.empty_page_label.setAlignment(Qt.AlignCenter)
+
+        self.page_2_layout.addWidget(self.empty_page_label)
+
+        self.pages.addWidget(self.page_2)
+        self.page_3 = QWidget()
+        self.page_3.setObjectName(u"page_3")
+        self.page_3.setStyleSheet(u"QFrame {\n"
+"	font-size: 16pt;\n"
+"}")
+        self.page_3_layout = QVBoxLayout(self.page_3)
+        self.page_3_layout.setObjectName(u"page_3_layout")
+        self.empty_page_label1 = QLabel(self.page_3)
+        self.empty_page_label1.setObjectName(u"empty_page_label1")
+        self.empty_page_label1.setFont(font)
+        self.empty_page_label1.setAlignment(Qt.AlignCenter)
+
+        self.page_3_layout.addWidget(self.empty_page_label1)
+
+        self.pages.addWidget(self.page_3)
+        self.page_4 = QWidget()
+        self.page_4.setObjectName(u"page_4")
+        self.page_4_layout = QVBoxLayout(self.page_4)
+        self.page_4_layout.setSpacing(5)
+        self.page_4_layout.setObjectName(u"page_4_layout")
+        self.page_4_layout.setContentsMargins(5, 5, 5, 5)
+        self.scroll_area = QScrollArea(self.page_4)
         self.scroll_area.setObjectName(u"scroll_area")
         self.scroll_area.setStyleSheet(u"background: transparent;")
         self.scroll_area.setFrameShape(QFrame.NoFrame)
@@ -94,8 +109,6 @@ class Ui_MainPages(object):
         self.title_label = QLabel(self.contents)
         self.title_label.setObjectName(u"title_label")
         self.title_label.setMaximumSize(QSize(16777215, 40))
-        font = QFont()
-        font.setPointSize(16)
         self.title_label.setFont(font)
         self.title_label.setStyleSheet(u"font-size: 16pt")
         self.title_label.setAlignment(Qt.AlignCenter)
@@ -136,24 +149,39 @@ class Ui_MainPages(object):
 
         self.scroll_area.setWidget(self.contents)
 
-        self.page_2_layout.addWidget(self.scroll_area)
+        self.page_4_layout.addWidget(self.scroll_area)
 
-        self.pages.addWidget(self.page_2)
-        self.page_3 = QWidget()
-        self.page_3.setObjectName(u"page_3")
-        self.page_3.setStyleSheet(u"QFrame {\n"
+        self.pages.addWidget(self.page_4)
+        self.page_5 = QWidget()
+        self.page_5.setObjectName(u"page_5")
+        self.page_5.setStyleSheet(u"QFrame {\n"
 "	font-size: 16pt;\n"
 "}")
-        self.page_3_layout = QVBoxLayout(self.page_3)
-        self.page_3_layout.setObjectName(u"page_3_layout")
-        self.empty_page_label = QLabel(self.page_3)
-        self.empty_page_label.setObjectName(u"empty_page_label")
-        self.empty_page_label.setFont(font)
-        self.empty_page_label.setAlignment(Qt.AlignCenter)
+        self.page_5_layout = QVBoxLayout(self.page_5)
+        self.page_5_layout.setObjectName(u"page_5_layout")
+        self.empty_page_label2 = QLabel(self.page_5)
+        self.empty_page_label2.setObjectName(u"empty_page_label2")
+        self.empty_page_label2.setFont(font)
+        self.empty_page_label2.setAlignment(Qt.AlignCenter)
 
-        self.page_3_layout.addWidget(self.empty_page_label)
+        self.page_5_layout.addWidget(self.empty_page_label2)
 
-        self.pages.addWidget(self.page_3)
+        self.pages.addWidget(self.page_5)
+        self.page_6 = QWidget()
+        self.page_6.setObjectName(u"page_6")
+        self.page_6.setStyleSheet(u"QFrame {\n"
+"	font-size: 16pt;\n"
+"}")
+        self.page_6_layout = QVBoxLayout(self.page_6)
+        self.page_6_layout.setObjectName(u"page_6_layout")
+        self.empty_page_label3 = QLabel(self.page_6)
+        self.empty_page_label3.setObjectName(u"empty_page_label3")
+        self.empty_page_label3.setFont(font)
+        self.empty_page_label3.setAlignment(Qt.AlignCenter)
+
+        self.page_6_layout.addWidget(self.empty_page_label3)
+
+        self.pages.addWidget(self.page_6)
 
         self.main_pages_layout.addWidget(self.pages)
 
@@ -169,9 +197,12 @@ class Ui_MainPages(object):
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
         self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To PyOneDark GUI", None))
+        self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
+        self.empty_page_label1.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
         self.title_label.setText(QCoreApplication.translate("MainPages", u"Custom Widgets Page", None))
         self.description_label.setText(QCoreApplication.translate("MainPages", u"Here will be all the custom widgets, they will be added over time on this page.\n"
 "I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.", None))
-        self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
+        self.empty_page_label2.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
+        self.empty_page_label3.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
     # retranslateUi
 

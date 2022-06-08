@@ -61,23 +61,23 @@ class SetupMainWindow:
     add_left_menus = [
         {
             "btn_icon" : "icon_home.svg",
-            "btn_id" : "btn_home",
-            "btn_text" : "Home",
-            "btn_tooltip" : "Home page",
+            "btn_id" : "btn_page1",
+            "btn_text" : "Start",
+            "btn_tooltip" : "Start",
             "show_top" : True,
             "is_active" : True
         },
         {
             "btn_icon" : "icon_widgets.svg",
-            "btn_id" : "btn_widgets",
-            "btn_text" : "Show Custom Widgets",
-            "btn_tooltip" : "Show custom widgets",
+            "btn_id" : "btn_page2",
+            "btn_text" : "Connect",
+            "btn_tooltip" : "Connect",
             "show_top" : True,
             "is_active" : False
         },
         {
             "btn_icon" : "icon_add_user.svg",
-            "btn_id" : "btn_capture_keyframe",
+            "btn_id" : "btn_page3",
             "btn_text" : "Capture keyframes",
             "btn_tooltip" : "Capture keyframes",
             "show_top" : True,
@@ -85,25 +85,25 @@ class SetupMainWindow:
         },
         {
             "btn_icon" : "icon_file.svg",
-            "btn_id" : "btn_new_file",
-            "btn_text" : "New File",
-            "btn_tooltip" : "Create new file",
+            "btn_id" : "btn_page4",
+            "btn_text" : "Plan",
+            "btn_tooltip" : "Plan",
             "show_top" : True,
             "is_active" : False
         },
         {
             "btn_icon" : "icon_folder_open.svg",
-            "btn_id" : "btn_open_file",
-            "btn_text" : "Open File",
-            "btn_tooltip" : "Open file",
+            "btn_id" : "btn_page5",
+            "btn_text" : "Fly",
+            "btn_tooltip" : "Fly",
             "show_top" : True,
             "is_active" : False
         },
         {
             "btn_icon" : "icon_save.svg",
-            "btn_id" : "btn_save",
-            "btn_text" : "Save File",
-            "btn_tooltip" : "Save file",
+            "btn_id" : "btn_page6",
+            "btn_text" : "Review",
+            "btn_tooltip" : "Review",
             "show_top" : True,
             "is_active" : False
         },

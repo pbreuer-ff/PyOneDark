@@ -145,7 +145,55 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	font-size: 16pt;
+}</string>
+      </property>
       <layout class="QVBoxLayout" name="page_2_layout">
+       <item>
+        <widget class="QLabel" name="empty_page_label">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Empty Page</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	font-size: 16pt;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="page_3_layout">
+       <item>
+        <widget class="QLabel" name="empty_page_label">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Empty Page</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+<widget class="QWidget" name="page_4">
+      <layout class="QVBoxLayout" name="page_4_layout">
        <property name="spacing">
         <number>5</number>
        </property>
@@ -265,13 +313,37 @@ I will try to always record a new tutorial when adding a new Widget and updating
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="page_3">
+<widget class="QWidget" name="page_5">
       <property name="styleSheet">
        <string notr="true">QFrame {
 	font-size: 16pt;
 }</string>
       </property>
-      <layout class="QVBoxLayout" name="page_3_layout">
+      <layout class="QVBoxLayout" name="page_5_layout">
+       <item>
+        <widget class="QLabel" name="empty_page_label">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Empty Page</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+<widget class="QWidget" name="page_6">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	font-size: 16pt;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="page_6_layout">
        <item>
         <widget class="QLabel" name="empty_page_label">
          <property name="font">

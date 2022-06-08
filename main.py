@@ -87,29 +87,54 @@ class MainWindow(QMainWindow):
         # LEFT MENU
         # ///////////////////////////////////////////////////////////////
         
-        # HOME BTN
-        if btn.objectName() == "btn_home":
+        # PAGE 1
+        if btn.objectName() == "btn_page1":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 1
             MainFunctions.set_page(self, self.ui.load_pages.page_1)
 
-        # WIDGETS BTN
-        if btn.objectName() == "btn_widgets":
+        # PAGE 2
+        if btn.objectName() == "btn_page2":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 2
             MainFunctions.set_page(self, self.ui.load_pages.page_2)
 
-        # LOAD KEYFRAME CAPTURE PAGE
-        if btn.objectName() == "btn_capture_keyframe":
+        # PAGE 3
+        if btn.objectName() == "btn_page3":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 3 
             MainFunctions.set_page(self, self.ui.load_pages.page_3)
+
+        # PAGE 4
+        if btn.objectName() == "btn_page4":
+            # Select Menu
+            self.ui.left_menu.select_only_one(btn.objectName())
+
+            # Load Page 4
+            MainFunctions.set_page(self, self.ui.load_pages.page_4)
+
+        # PAGE 5
+        if btn.objectName() == "btn_page5":
+            # Select Menu
+            self.ui.left_menu.select_only_one(btn.objectName())
+
+            # Load Page 5
+            MainFunctions.set_page(self, self.ui.load_pages.page_5)
+
+        # PAGE 6
+        if btn.objectName() == "btn_page6":
+            # Select Menu
+            self.ui.left_menu.select_only_one(btn.objectName())
+
+            # Load Page 6
+            MainFunctions.set_page(self, self.ui.load_pages.page_6)
+            
 
         # BOTTOM INFORMATION
         if btn.objectName() == "btn_info":
