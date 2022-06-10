@@ -25,7 +25,7 @@ class Settings(object):
         # DICTIONARY WITH SETTINGS
         # Just to have objects references
         self.items = {
-            "app_name": "Flylapse App",
+            "app_name": "Flylapse",
             "version": "v1.0.0",
             "copyright": "Freefly Systems Inc.",
             "year": 2022,

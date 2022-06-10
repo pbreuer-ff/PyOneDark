@@ -80,6 +80,7 @@ class PyLeftMenuButton(QPushButton):
             text_foreground
         )
         self.tooltip.hide()
+        self.shown = True
 
     # PAINT EVENT
     # ///////////////////////////////////////////////////////////////

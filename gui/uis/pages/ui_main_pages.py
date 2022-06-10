@@ -6,7 +6,7 @@ class Ui_MainPages(object):
     def setupUi(self, MainPages):
         if not MainPages.objectName():
             MainPages.setObjectName(u"MainPages")
-        MainPages.resize(860, 600)
+        MainPages.resize(994, 631)
         self.main_pages_layout = QVBoxLayout(MainPages)
         self.main_pages_layout.setSpacing(0)
         self.main_pages_layout.setObjectName(u"main_pages_layout")
@@ -60,14 +60,75 @@ class Ui_MainPages(object):
 "}")
         self.page_2_layout = QVBoxLayout(self.page_2)
         self.page_2_layout.setObjectName(u"page_2_layout")
-        self.empty_page_label = QLabel(self.page_2)
-        self.empty_page_label.setObjectName(u"empty_page_label")
-        font = QFont()
-        font.setPointSize(16)
-        self.empty_page_label.setFont(font)
-        self.empty_page_label.setAlignment(Qt.AlignCenter)
+        self.page_2_layout.setContentsMargins(0, -1, -1, -1)
+        self.page_2_frame = QFrame(self.page_2)
+        self.page_2_frame.setObjectName(u"page_2_frame")
+        self.page_2_frame.setMinimumSize(QSize(0, 500))
+        self.page_2_frame.setMaximumSize(QSize(16777215, 500))
+        self.page_2_frame.setLayoutDirection(Qt.LeftToRight)
+        self.page_2_frame.setFrameShape(QFrame.NoFrame)
+        self.page_2_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.page_2_frame)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.page_2_contents = QVBoxLayout()
+        self.page_2_contents.setSpacing(10)
+        self.page_2_contents.setObjectName(u"page_2_contents")
+        self.p2_svg_astro_frame = QFrame(self.page_2_frame)
+        self.p2_svg_astro_frame.setObjectName(u"p2_svg_astro_frame")
+        self.p2_svg_astro_frame.setMinimumSize(QSize(0, 200))
+        self.p2_svg_astro_frame.setMaximumSize(QSize(16777215, 200))
+        self.p2_svg_astro_frame.setFrameShape(QFrame.NoFrame)
+        self.p2_svg_astro_frame.setFrameShadow(QFrame.Raised)
+        self.p2_svg_astro_layout = QVBoxLayout(self.p2_svg_astro_frame)
+        self.p2_svg_astro_layout.setSpacing(0)
+        self.p2_svg_astro_layout.setObjectName(u"p2_svg_astro_layout")
+        self.p2_svg_astro_layout.setContentsMargins(0, 0, 0, 0)
 
-        self.page_2_layout.addWidget(self.empty_page_label)
+        self.page_2_contents.addWidget(self.p2_svg_astro_frame)
+
+        self.p2_label_conn_status = QLabel(self.page_2_frame)
+        self.p2_label_conn_status.setObjectName(u"p2_label_conn_status")
+        self.p2_label_conn_status.setMinimumSize(QSize(0, 20))
+        self.p2_label_conn_status.setMaximumSize(QSize(16777215, 20))
+        font = QFont()
+        font.setPointSize(10)
+        self.p2_label_conn_status.setFont(font)
+        self.p2_label_conn_status.setAlignment(Qt.AlignCenter)
+
+        self.page_2_contents.addWidget(self.p2_label_conn_status)
+
+        self.p2_icon_conn_status_frame = QFrame(self.page_2_frame)
+        self.p2_icon_conn_status_frame.setObjectName(u"p2_icon_conn_status_frame")
+        self.p2_icon_conn_status_frame.setMinimumSize(QSize(0, 100))
+        self.p2_icon_conn_status_frame.setMaximumSize(QSize(16777215, 100))
+        self.p2_icon_conn_status_frame.setFrameShape(QFrame.NoFrame)
+        self.p2_icon_conn_status_frame.setFrameShadow(QFrame.Raised)
+        self.p2_icon_conn_status_layout = QVBoxLayout(self.p2_icon_conn_status_frame)
+        self.p2_icon_conn_status_layout.setSpacing(0)
+        self.p2_icon_conn_status_layout.setObjectName(u"p2_icon_conn_status_layout")
+        self.p2_icon_conn_status_layout.setContentsMargins(0, 0, 0, 0)
+
+        self.page_2_contents.addWidget(self.p2_icon_conn_status_frame)
+
+        self.p2_toggle_conn_frame = QFrame(self.page_2_frame)
+        self.p2_toggle_conn_frame.setObjectName(u"p2_toggle_conn_frame")
+        self.p2_toggle_conn_frame.setMinimumSize(QSize(0, 100))
+        self.p2_toggle_conn_frame.setMaximumSize(QSize(16777215, 100))
+        self.p2_toggle_conn_frame.setFrameShape(QFrame.NoFrame)
+        self.p2_toggle_conn_frame.setFrameShadow(QFrame.Raised)
+        self.p2_toggle_conn_layout = QVBoxLayout(self.p2_toggle_conn_frame)
+        self.p2_toggle_conn_layout.setSpacing(0)
+        self.p2_toggle_conn_layout.setObjectName(u"p2_toggle_conn_layout")
+        self.p2_toggle_conn_layout.setContentsMargins(0, 0, 0, 0)
+
+        self.page_2_contents.addWidget(self.p2_toggle_conn_frame)
+
+
+        self.verticalLayout_3.addLayout(self.page_2_contents)
+
+
+        self.page_2_layout.addWidget(self.page_2_frame)
 
         self.pages.addWidget(self.page_2)
         self.page_3 = QWidget()
@@ -77,12 +138,14 @@ class Ui_MainPages(object):
 "}")
         self.page_3_layout = QVBoxLayout(self.page_3)
         self.page_3_layout.setObjectName(u"page_3_layout")
-        self.empty_page_label1 = QLabel(self.page_3)
-        self.empty_page_label1.setObjectName(u"empty_page_label1")
-        self.empty_page_label1.setFont(font)
-        self.empty_page_label1.setAlignment(Qt.AlignCenter)
+        self.empty_page_label = QLabel(self.page_3)
+        self.empty_page_label.setObjectName(u"empty_page_label")
+        font1 = QFont()
+        font1.setPointSize(16)
+        self.empty_page_label.setFont(font1)
+        self.empty_page_label.setAlignment(Qt.AlignCenter)
 
-        self.page_3_layout.addWidget(self.empty_page_label1)
+        self.page_3_layout.addWidget(self.empty_page_label)
 
         self.pages.addWidget(self.page_3)
         self.page_4 = QWidget()
@@ -109,7 +172,7 @@ class Ui_MainPages(object):
         self.title_label = QLabel(self.contents)
         self.title_label.setObjectName(u"title_label")
         self.title_label.setMaximumSize(QSize(16777215, 40))
-        self.title_label.setFont(font)
+        self.title_label.setFont(font1)
         self.title_label.setStyleSheet(u"font-size: 16pt")
         self.title_label.setAlignment(Qt.AlignCenter)
 
@@ -159,12 +222,12 @@ class Ui_MainPages(object):
 "}")
         self.page_5_layout = QVBoxLayout(self.page_5)
         self.page_5_layout.setObjectName(u"page_5_layout")
-        self.empty_page_label2 = QLabel(self.page_5)
-        self.empty_page_label2.setObjectName(u"empty_page_label2")
-        self.empty_page_label2.setFont(font)
-        self.empty_page_label2.setAlignment(Qt.AlignCenter)
+        self.empty_page_label1 = QLabel(self.page_5)
+        self.empty_page_label1.setObjectName(u"empty_page_label1")
+        self.empty_page_label1.setFont(font1)
+        self.empty_page_label1.setAlignment(Qt.AlignCenter)
 
-        self.page_5_layout.addWidget(self.empty_page_label2)
+        self.page_5_layout.addWidget(self.empty_page_label1)
 
         self.pages.addWidget(self.page_5)
         self.page_6 = QWidget()
@@ -174,12 +237,12 @@ class Ui_MainPages(object):
 "}")
         self.page_6_layout = QVBoxLayout(self.page_6)
         self.page_6_layout.setObjectName(u"page_6_layout")
-        self.empty_page_label3 = QLabel(self.page_6)
-        self.empty_page_label3.setObjectName(u"empty_page_label3")
-        self.empty_page_label3.setFont(font)
-        self.empty_page_label3.setAlignment(Qt.AlignCenter)
+        self.empty_page_label2 = QLabel(self.page_6)
+        self.empty_page_label2.setObjectName(u"empty_page_label2")
+        self.empty_page_label2.setFont(font1)
+        self.empty_page_label2.setAlignment(Qt.AlignCenter)
 
-        self.page_6_layout.addWidget(self.empty_page_label3)
+        self.page_6_layout.addWidget(self.empty_page_label2)
 
         self.pages.addWidget(self.page_6)
 
@@ -188,7 +251,7 @@ class Ui_MainPages(object):
 
         self.retranslateUi(MainPages)
 
-        self.pages.setCurrentIndex(0)
+        self.pages.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainPages)
@@ -197,12 +260,12 @@ class Ui_MainPages(object):
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
         self.label.setText(QCoreApplication.translate("MainPages", u"Welcome to Flylapse", None))
+        self.p2_label_conn_status.setText(QCoreApplication.translate("MainPages", u"Disconnected", None))
         self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
-        self.empty_page_label1.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
         self.title_label.setText(QCoreApplication.translate("MainPages", u"Custom Widgets Page", None))
         self.description_label.setText(QCoreApplication.translate("MainPages", u"Here will be all the custom widgets, they will be added over time on this page.\n"
 "I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.", None))
+        self.empty_page_label1.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
         self.empty_page_label2.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
-        self.empty_page_label3.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
     # retranslateUi
 

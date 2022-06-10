@@ -116,7 +116,7 @@ class PyTitleBar(QWidget):
             self.top_logo.mouseMoveEvent = moveWindow
             self.div_1.mouseMoveEvent = moveWindow
             self.title_label.mouseMoveEvent = moveWindow
-            self.div_2.mouseMoveEvent = moveWindow
+            # self.div_2.mouseMoveEvent = moveWindow
             self.div_3.mouseMoveEvent = moveWindow
 
         # MAXIMIZE / RESTORE
@@ -124,14 +124,14 @@ class PyTitleBar(QWidget):
             self.top_logo.mouseDoubleClickEvent = self.maximize_restore
             self.div_1.mouseDoubleClickEvent = self.maximize_restore
             self.title_label.mouseDoubleClickEvent = self.maximize_restore
-            self.div_2.mouseDoubleClickEvent = self.maximize_restore
+            # self.div_2.mouseDoubleClickEvent = self.maximize_restore
 
         # ADD WIDGETS TO TITLE BAR
         # ///////////////////////////////////////////////////////////////
         self.bg_layout.addWidget(self.top_logo)
         self.bg_layout.addWidget(self.div_1)
         self.bg_layout.addWidget(self.title_label)
-        self.bg_layout.addWidget(self.div_2)
+        # self.bg_layout.addWidget(self.div_2)
 
         # ADD BUTTONS BUTTONS
         # ///////////////////////////////////////////////////////////////
@@ -184,6 +184,7 @@ class PyTitleBar(QWidget):
 
                 # ADD TO LAYOUT
                 self.custom_buttons_layout.addWidget(self.menu)
+                self.menu.hide()
 
             # ADD DIV
             if self._is_custom_title_bar:
@@ -256,7 +257,7 @@ class PyTitleBar(QWidget):
 
         # DIVS
         self.div_1 = PyDiv(self._div_color)
-        self.div_2 = PyDiv(self._div_color)
+        # self.div_2 = PyDiv(self._div_color)
         self.div_3 = PyDiv(self._div_color)
 
         # LEFT FRAME WITH MOVE APP
@@ -338,3 +339,17 @@ class PyTitleBar(QWidget):
 
         # ADD TO LAYOUT
         self.title_bar_layout.addWidget(self.bg)
+
+    def show_monitor(self, bool):
+        for btn in self.findChildren(PyTitleButton):
+            monitor_btn_id = "titlemenu_btn_monitor"
+            if btn.objectName() == monitor_btn_id:
+                if(bool):
+                    btn.show()
+                    btn.shown = True
+                else:
+                    btn.hide()
+                    btn.shown = False
+                return
+        
+        print(f"No button '{monitor_btn_id}'")

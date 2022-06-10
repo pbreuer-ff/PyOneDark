@@ -1,6 +1,6 @@
 # ///////////////////////////////////////////////////////////////
 #
-# Based on template 'PyOneDark' by: Wanderson M. Pimenta
+# GUI based on template 'PyOneDark' by: Wanderson M. Pimenta
 #
 # ///////////////////////////////////////////////////////////////
 
@@ -9,6 +9,13 @@
 from gui.uis.windows.main_window.functions_main_window import *
 import sys
 import os
+import functools
+import qasync
+import asyncio
+
+# IMPORT APP FUNCTIONS
+# ///////////////////////////////////////////////////////////////
+from program import *
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -30,21 +37,25 @@ from gui.widgets import *
 # ADJUST QT FONT DPI FOR HIGHT SCALE AN 4K MONITOR
 # ///////////////////////////////////////////////////////////////
 os.environ["QT_FONT_DPI"] = "96"
-# IF IS 4K MONITOR ENABLE 'os.environ["QT_SCALE_FACTOR"] = "2"'
+# FOR 4K MONITOR: SET 'os.environ["QT_SCALE_FACTOR"] = "2"'
+
 
 # MAIN WINDOW
 # ///////////////////////////////////////////////////////////////
-
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # SETUP MAIN WINDOw
+        # START PROGRAM
+        # ///////////////////////////////////////////////////////////////
+        program1 = program()
+
+        # SETUP MAIN WINDOW
         # Load widgets from "gui\uis\main_window\ui_main.py"
         # ///////////////////////////////////////////////////////////////
         self.ui = UI_MainWindow()
-        self.ui.setup_ui(self)
+        self.ui.setup_ui(self, program1)
 
         # LOAD SETTINGS
         # ///////////////////////////////////////////////////////////////
@@ -62,74 +73,117 @@ class MainWindow(QMainWindow):
 
     # LEFT MENU BTN IS CLICKED
     # Run function when btn is clicked
-    # Check funtion by object name / btn_id
+    # Check function by object name / btn_id
     # ///////////////////////////////////////////////////////////////
     def btn_clicked(self):
         # GET BT CLICKED
         btn = SetupMainWindow.setup_btns(self)
 
         # Remove Selection If Clicked By "btn_close_left_column"
-        if btn.objectName() != "btn_settings":
+        if btn.objectName() != "leftmenu_btn_settings":
             self.ui.left_menu.deselect_all_tab()
 
         # Get Title Bar Btn And Reset Active
         top_settings = MainFunctions.get_title_bar_btn(
-            self, "btn_top_settings")
+            self, "titlemenu_btn_monitor")
         top_settings.set_active(False)
 
         # LEFT MENU
         # ///////////////////////////////////////////////////////////////
 
         # PAGE 1
-        if btn.objectName() == "btn_page1":
+        if btn.objectName() == "leftmenu_btn_page_1":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 1
             MainFunctions.set_page(self, self.ui.load_pages.page_1)
 
+            self.ui.active_page = 1
+
+            # Show/hide
+            self.ui.left_menu.show_help(True)
+            self.ui.left_menu.show_settings(False)
+            self.ui.title_bar.show_monitor(self.ui.program.connected)
+
         # PAGE 2
-        if btn.objectName() == "btn_page2":
+        if btn.objectName() == "leftmenu_btn_page_2":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 2
             MainFunctions.set_page(self, self.ui.load_pages.page_2)
 
+            self.ui.active_page = 2
+
+            # Show/hide
+            self.ui.left_menu.show_help(True)
+            self.ui.left_menu.show_settings(False)
+            self.ui.title_bar.show_monitor(self.ui.program.connected)
+
         # PAGE 3
-        if btn.objectName() == "btn_page3":
+        if btn.objectName() == "leftmenu_btn_page_3":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 3
             MainFunctions.set_page(self, self.ui.load_pages.page_3)
 
+            self.ui.active_page = 3
+
+            # Show/hide
+            self.ui.left_menu.show_help(True)
+            self.ui.left_menu.show_settings(True)
+            self.ui.title_bar.show_monitor(self.ui.program.connected)
+                    
+
         # PAGE 4
-        if btn.objectName() == "btn_page4":
+        if btn.objectName() == "leftmenu_btn_page_4":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 4
             MainFunctions.set_page(self, self.ui.load_pages.page_4)
 
+            self.ui.active_page = 4
+
+            # Show/hide
+            self.ui.left_menu.show_help(True)
+            self.ui.left_menu.show_settings(True)
+            self.ui.title_bar.show_monitor(self.ui.program.connected)
+
         # PAGE 5
-        if btn.objectName() == "btn_page5":
+        if btn.objectName() == "leftmenu_btn_page_5":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 5
             MainFunctions.set_page(self, self.ui.load_pages.page_5)
 
+            self.ui.active_page = 5
+
+            # Show/hide
+            self.ui.left_menu.show_help(True)
+            self.ui.left_menu.show_settings(False)
+            self.ui.title_bar.show_monitor(self.ui.program.connected)
+
         # PAGE 6
-        if btn.objectName() == "btn_page6":
+        if btn.objectName() == "leftmenu_btn_page_6":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
             # Load Page 6
             MainFunctions.set_page(self, self.ui.load_pages.page_6)
 
-        # BOTTOM INFORMATION
-        if btn.objectName() == "btn_info":
+            self.ui.active_page = 6
+
+            # Show/hide
+            self.ui.left_menu.show_help(True)
+            self.ui.left_menu.show_settings(True)
+            self.ui.title_bar.show_monitor(self.ui.program.connected)
+
+        # BOTTOM: HELP
+        if btn.objectName() == "leftmenu_btn_help":
             # CHECK IF LEFT COLUMN IS VISIBLE
             if not MainFunctions.left_column_is_visible(self):
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
@@ -154,8 +208,8 @@ class MainWindow(QMainWindow):
                     icon_path=Functions.set_svg_icon("icon_info.svg")
                 )
 
-        # SETTINGS LEFT
-        if btn.objectName() == "btn_settings" or btn.objectName() == "btn_close_left_column":
+        # BOTTOM: SETTINGS
+        if btn.objectName() == "leftmenu_btn_settings" or btn.objectName() == "btn_close_left_column":
             # CHECK IF LEFT COLUMN IS VISIBLE
             if not MainFunctions.left_column_is_visible(self):
                 # Show / Hide
@@ -170,10 +224,20 @@ class MainWindow(QMainWindow):
 
             # Change Left Column Menu
             if btn.objectName() != "btn_close_left_column":
+                #menu = getattr(self.ui.left_column.menus, 'page_' + str(self.ui.active_page) + '_settings')
+                menu = self.ui.left_column.menus.menu_1
+
+                title = "Settings: "
+                for btn in self.ui.left_menu.findChildren(QPushButton):
+                    help_btn_id = "leftmenu_btn_page" + str(self.ui.active_page)
+                    if btn.objectName() == help_btn_id:
+                        title = title + btn.text
+                        print(title)
+
                 MainFunctions.set_left_column_menu(
                     self,
-                    menu=self.ui.left_column.menus.menu_1,
-                    title="Settings Left Column",
+                    menu,
+                    title,
                     icon_path=Functions.set_svg_icon("icon_settings.svg")
                 )
 
@@ -181,7 +245,7 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # SETTINGS TITLE BAR
-        if btn.objectName() == "btn_top_settings":
+        if btn.objectName() == "titlemenu_btn_monitor":
             # Toogle Active
             if not MainFunctions.right_column_is_visible(self):
                 btn.set_active(True)
@@ -196,7 +260,7 @@ class MainWindow(QMainWindow):
 
             # Get Left Menu Btn
             top_settings = MainFunctions.get_left_menu_btn(
-                self, "btn_settings")
+                self, "leftmenu_btn_settings")
             top_settings.set_active_tab(False)
 
         # DEBUG
@@ -204,7 +268,7 @@ class MainWindow(QMainWindow):
 
     # LEFT MENU BTN IS RELEASED
     # Run function when btn is released
-    # Check funtion by object name / btn_id
+    # Check function by object name / btn_id
     # ///////////////////////////////////////////////////////////////
     def btn_released(self):
         # GET BT CLICKED
@@ -225,16 +289,31 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPos()
 
 
-# SETTINGS WHEN TO START
-# Set the initial class and also additional parameters of the "QApplication" class
-# ///////////////////////////////////////////////////////////////
-if __name__ == "__main__":
-    # APPLICATION
-    # ///////////////////////////////////////////////////////////////
-    app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("Freefly_Logo.ico"))
+async def main():
+
+    def close_future(future, loop):
+        loop.call_later(10, future.cancel)
+        future.cancel()
+
+    loop = asyncio.get_event_loop()
+    future = asyncio.Future()
+
+    app = QApplication.instance()
+    app.setWindowIcon(QIcon("./images/Freefly_Logo.ico"))
+    if hasattr(app, "aboutToQuit"):
+        # clean up if gui app wants to quit
+        getattr(app, "aboutToQuit").connect(
+            functools.partial(close_future, future, loop)
+        )
+
     window = MainWindow()
 
-    # EXEC APP
-    # ///////////////////////////////////////////////////////////////
-    sys.exit(app.exec_())
+    await future
+    return True
+
+
+if __name__ == "__main__":
+    try:
+        qasync.run(main())
+    except asyncio.exceptions.CancelledError:
+        sys.exit(0)

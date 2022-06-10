@@ -152,6 +152,37 @@ class PyLeftMenu(QWidget):
                     self.div_bottom.show()
                     self.bottom_layout.addWidget(self.menu)
 
+    def show_help(self, bool):
+        for btn in self.findChildren(PyLeftMenuButton):
+            help_btn_id = "leftmenu_btn_help"
+            if btn.objectName() == help_btn_id:
+                if(bool):
+                    btn.show()
+                    self.div_bottom.show()
+                    btn.shown = True
+                else:
+                    btn.hide()
+                    btn.shown = False
+                return
+        print(f"No button '{help_btn_id}'")
+
+    def show_settings(self, bool):
+        for btn in self.findChildren(PyLeftMenuButton):
+            settings_btn_id = "leftmenu_btn_settings"
+            if btn.objectName() == settings_btn_id:
+                if (bool):
+                    btn.show()
+                    self.div_bottom.show()
+                    btn.shown = True
+                else:
+                    if (btn.shown):
+                        pass
+                    btn.hide()
+                    btn.shown = False
+                return
+        print(f"No button '{settings_btn_id}'")
+                
+
     # LEFT MENU EMIT SIGNALS
     # ///////////////////////////////////////////////////////////////
     def btn_clicked(self):
@@ -160,7 +191,7 @@ class PyLeftMenu(QWidget):
     def btn_released(self):
         self.released.emit(self.menu)
 
-    # EXPAND / RETRACT LEF MENU
+    # EXPAND / RETRACT LEFT MENU
     # ///////////////////////////////////////////////////////////////
     def toggle_animation(self):
         # CREATE ANIMATION
