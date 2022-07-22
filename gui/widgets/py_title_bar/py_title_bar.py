@@ -38,7 +38,7 @@ class PyTitleBar(QWidget):
         self,
         parent,
         app_parent,
-        logo_image="logo_top_100x22.svg",
+        logo_image="freefly_logo_text.svg",
         logo_width=100,
         buttons=None,
         dark_one="#1b1e23",

@@ -229,10 +229,9 @@ class MainWindow(QMainWindow):
 
                 title = "Settings: "
                 for btn in self.ui.left_menu.findChildren(QPushButton):
-                    help_btn_id = "leftmenu_btn_page" + str(self.ui.active_page)
+                    help_btn_id = "leftmenu_btn_page_" + str(self.ui.active_page)
                     if btn.objectName() == help_btn_id:
-                        title = title + btn.text
-                        print(title)
+                        title = title + btn.text()
 
                 MainFunctions.set_left_column_menu(
                     self,
@@ -299,7 +298,7 @@ async def main():
     future = asyncio.Future()
 
     app = QApplication.instance()
-    app.setWindowIcon(QIcon("./images/Freefly_Logo.ico"))
+    app.setWindowIcon(QIcon("./images/freefly_logo.ico"))
     if hasattr(app, "aboutToQuit"):
         # clean up if gui app wants to quit
         getattr(app, "aboutToQuit").connect(
