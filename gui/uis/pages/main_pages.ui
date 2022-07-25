@@ -32,7 +32,7 @@
    <item>
     <widget class="QStackedWidget" name="pages">
      <property name="currentIndex">
-      <number>3</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="page_1">
       <property name="font">
@@ -1524,7 +1524,7 @@
                       </property>
                       <layout class="QHBoxLayout" name="p4_label_keyframe_layout">
                        <property name="spacing">
-                        <number>15</number>
+                        <number>10</number>
                        </property>
                        <property name="leftMargin">
                         <number>0</number>
@@ -2402,8 +2402,8 @@
             <widget class="QFrame" name="p6_frame">
              <property name="minimumSize">
               <size>
-               <width>300</width>
-               <height>300</height>
+               <width>0</width>
+               <height>0</height>
               </size>
              </property>
              <property name="frameShape">
@@ -2567,7 +2567,7 @@
                <widget class="QFrame" name="p6_table_frame">
                 <property name="minimumSize">
                  <size>
-                  <width>0</width>
+                  <width>800</width>
                   <height>200</height>
                  </size>
                 </property>

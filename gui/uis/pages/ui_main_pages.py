@@ -582,7 +582,7 @@ class Ui_MainPages(object):
         self.p4_label_keyframe_frame.setFrameShape(QFrame.NoFrame)
         self.p4_label_keyframe_frame.setFrameShadow(QFrame.Raised)
         self.p4_label_keyframe_layout = QHBoxLayout(self.p4_label_keyframe_frame)
-        self.p4_label_keyframe_layout.setSpacing(15)
+        self.p4_label_keyframe_layout.setSpacing(10)
         self.p4_label_keyframe_layout.setObjectName(u"p4_label_keyframe_layout")
         self.p4_label_keyframe_layout.setContentsMargins(0, 0, 0, 0)
 
@@ -931,7 +931,7 @@ class Ui_MainPages(object):
         self.p6_contents_layout.setContentsMargins(0, 0, 0, 0)
         self.p6_frame = QFrame(self.p6_contents)
         self.p6_frame.setObjectName(u"p6_frame")
-        self.p6_frame.setMinimumSize(QSize(300, 300))
+        self.p6_frame.setMinimumSize(QSize(0, 0))
         self.p6_frame.setFrameShape(QFrame.NoFrame)
         self.p6_frame.setFrameShadow(QFrame.Raised)
         self.p6_layout = QVBoxLayout(self.p6_frame)
@@ -995,7 +995,7 @@ class Ui_MainPages(object):
 
         self.p6_table_frame = QFrame(self.p6_frame)
         self.p6_table_frame.setObjectName(u"p6_table_frame")
-        self.p6_table_frame.setMinimumSize(QSize(0, 200))
+        self.p6_table_frame.setMinimumSize(QSize(800, 200))
         font1 = QFont()
         font1.setPointSize(9)
         self.p6_table_frame.setFont(font1)
@@ -1023,7 +1023,7 @@ class Ui_MainPages(object):
 
         self.retranslateUi(MainPages)
 
-        self.pages.setCurrentIndex(3)
+        self.pages.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainPages)

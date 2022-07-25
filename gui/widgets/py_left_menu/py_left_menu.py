@@ -154,7 +154,7 @@ class PyLeftMenu(QWidget):
 
     def show_help(self, bool):
         for btn in self.findChildren(PyLeftMenuButton):
-            help_btn_id = "leftmenu_btn_help"
+            help_btn_id = "lm_btn_help"
             if btn.objectName() == help_btn_id:
                 if(bool):
                     btn.show()
@@ -168,7 +168,7 @@ class PyLeftMenu(QWidget):
 
     def show_settings(self, bool):
         for btn in self.findChildren(PyLeftMenuButton):
-            settings_btn_id = "leftmenu_btn_settings"
+            settings_btn_id = "lm_btn_settings"
             if btn.objectName() == settings_btn_id:
                 if (bool):
                     btn.show()

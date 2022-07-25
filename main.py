@@ -79,11 +79,11 @@ class MainWindow(QMainWindow):
         # GET BT CLICKED
         btn = SetupMainWindow.setup_btns(self)
 
-        # Remove Selection If Clicked By "btn_close_left_column"
-        if btn.objectName() != "leftmenu_btn_settings":
+        # Remove selection if clicked by "btn_close_left_column"
+        if btn.objectName() != "lm_btn_settings":
             self.ui.left_menu.deselect_all_tab()
 
-        # Get Title Bar Btn And Reset Active
+        # Get title bar btn and reset active
         top_settings = MainFunctions.get_title_bar_btn(
             self, "titlemenu_btn_monitor")
         top_settings.set_active(False)
@@ -92,7 +92,7 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # PAGE 1
-        if btn.objectName() == "leftmenu_btn_page_1":
+        if btn.objectName() == "lm_btn_page_1":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
@@ -106,8 +106,11 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.show_settings(False)
             self.ui.title_bar.show_monitor(self.ui.program.connected)
 
+            # Update settings/help
+            MainFunctions.update_left_column(self, True, False, btn)
+
         # PAGE 2
-        if btn.objectName() == "leftmenu_btn_page_2":
+        if btn.objectName() == "lm_btn_page_2":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
@@ -121,8 +124,11 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.show_settings(False)
             self.ui.title_bar.show_monitor(self.ui.program.connected)
 
+            # Update settings/help
+            MainFunctions.update_left_column(self, True, False, btn)
+
         # PAGE 3
-        if btn.objectName() == "leftmenu_btn_page_3":
+        if btn.objectName() == "lm_btn_page_3":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
@@ -135,10 +141,12 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.show_help(True)
             self.ui.left_menu.show_settings(True)
             self.ui.title_bar.show_monitor(self.ui.program.connected)
-                    
+
+            # Update settings/help
+            MainFunctions.update_left_column(self, True, True, btn)
 
         # PAGE 4
-        if btn.objectName() == "leftmenu_btn_page_4":
+        if btn.objectName() == "lm_btn_page_4":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
@@ -152,8 +160,11 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.show_settings(True)
             self.ui.title_bar.show_monitor(self.ui.program.connected)
 
+            # Update settings/help
+            MainFunctions.update_left_column(self, True, True, btn)
+
         # PAGE 5
-        if btn.objectName() == "leftmenu_btn_page_5":
+        if btn.objectName() == "lm_btn_page_5":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
@@ -167,8 +178,11 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.show_settings(False)
             self.ui.title_bar.show_monitor(self.ui.program.connected)
 
+            # Update settings/help
+            MainFunctions.update_left_column(self, True, False, btn)
+
         # PAGE 6
-        if btn.objectName() == "leftmenu_btn_page_6":
+        if btn.objectName() == "lm_btn_page_6":
             # Select Menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
@@ -182,55 +196,70 @@ class MainWindow(QMainWindow):
             self.ui.left_menu.show_settings(True)
             self.ui.title_bar.show_monitor(self.ui.program.connected)
 
+            # Update settings/help
+            MainFunctions.update_left_column(self, True, True, btn)
+    
+
         # BOTTOM: HELP
-        if btn.objectName() == "leftmenu_btn_help":
+        if btn.objectName() == "lm_btn_help":
             # CHECK IF LEFT COLUMN IS VISIBLE
             if not MainFunctions.left_column_is_visible(self):
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
 
-                # Show / Hide
+                # Show/hide
                 MainFunctions.toggle_left_column(self)
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
             else:
                 if btn.objectName() == "btn_close_left_column":
                     self.ui.left_menu.deselect_all_tab()
-                    # Show / Hide
+                    # Show/hide
                     MainFunctions.toggle_left_column(self)
 
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
 
-            # Change Left Column Menu
+            # Change left column menu
             if btn.objectName() != "btn_close_left_column":
+                """ TODO: call different menu depending on active page
+                menu = getattr(self.ui.left_column.menus, 'page_' + str(self.ui.active_page) + '_settings') """
+                menu = self.ui.left_column.menus.menu_help
+
+                title = "Help: "
+                for btn in self.ui.left_menu.findChildren(QPushButton):
+                    settings_btn_id = "lm_btn_page_" + str(self.ui.active_page)
+                    if btn.objectName() == settings_btn_id:
+                        title = title + btn.text()
+
                 MainFunctions.set_left_column_menu(
                     self,
-                    menu=self.ui.left_column.menus.menu_2,
-                    title="Info tab",
+                    menu,
+                    title,
                     icon_path=Functions.set_svg_icon("icon_info.svg")
                 )
 
         # BOTTOM: SETTINGS
-        if btn.objectName() == "leftmenu_btn_settings" or btn.objectName() == "btn_close_left_column":
+        if btn.objectName() == "lm_btn_settings" or btn.objectName() == "btn_close_left_column":
             # CHECK IF LEFT COLUMN IS VISIBLE
             if not MainFunctions.left_column_is_visible(self):
-                # Show / Hide
+                # Show/hide
                 MainFunctions.toggle_left_column(self)
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
             else:
                 if btn.objectName() == "btn_close_left_column":
                     self.ui.left_menu.deselect_all_tab()
-                    # Show / Hide
+                    # Show/hide
                     MainFunctions.toggle_left_column(self)
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
 
-            # Change Left Column Menu
+            # Change left column menu
             if btn.objectName() != "btn_close_left_column":
-                #menu = getattr(self.ui.left_column.menus, 'page_' + str(self.ui.active_page) + '_settings')
-                menu = self.ui.left_column.menus.menu_1
+                """ TODO: call different menu depending on active page
+                menu = getattr(self.ui.left_column.menus, 'page_' + str(self.ui.active_page) + '_settings') """
+                menu = self.ui.left_column.menus.menu_settings
 
                 title = "Settings: "
                 for btn in self.ui.left_menu.findChildren(QPushButton):
-                    help_btn_id = "leftmenu_btn_page_" + str(self.ui.active_page)
-                    if btn.objectName() == help_btn_id:
+                    settings_btn_id = "lm_btn_page_" + str(self.ui.active_page)
+                    if btn.objectName() == settings_btn_id:
                         title = title + btn.text()
 
                 MainFunctions.set_left_column_menu(
@@ -249,21 +278,21 @@ class MainWindow(QMainWindow):
             if not MainFunctions.right_column_is_visible(self):
                 btn.set_active(True)
 
-                # Show / Hide
+                # Show/hide
                 MainFunctions.toggle_right_column(self)
             else:
                 btn.set_active(False)
 
-                # Show / Hide
+                # Show/hide
                 MainFunctions.toggle_right_column(self)
 
             # Get Left Menu Btn
             top_settings = MainFunctions.get_left_menu_btn(
-                self, "leftmenu_btn_settings")
+                self, "lm_btn_settings")
             top_settings.set_active_tab(False)
 
         # DEBUG
-        print(f"Button {btn.objectName()}, clicked!")
+        print(f"{btn.objectName()} clicked!")
 
     # LEFT MENU BTN IS RELEASED
     # Run function when btn is released
@@ -274,7 +303,7 @@ class MainWindow(QMainWindow):
         btn = SetupMainWindow.setup_btns(self)
 
         # DEBUG
-        print(f"Button {btn.objectName()}, released!")
+        print(f"{btn.objectName()} released!")
 
     # RESIZE EVENT
     # ///////////////////////////////////////////////////////////////

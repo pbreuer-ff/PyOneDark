@@ -72,6 +72,22 @@ class MainFunctions():
     def get_left_menu_btn(self, object_name):
         return self.ui.left_menu.findChild(QPushButton, object_name)
 
+    # UPDATE LEFT COLUMN
+    # ///////////////////////////////////////////////////////////////
+    def update_left_column(self, help, settings, btn):
+        if MainFunctions.left_column_is_visible(self):
+            if self.ui.left_column.menus.menus.currentWidget() == self.ui.left_column.menus.menu_settings:
+                if settings:
+                    self.ui.left_column.title_label.setText("Settings: " + btn.text())
+                else:
+                    MainFunctions.toggle_left_column(self)
+
+            elif self.ui.left_column.menus.menus.currentWidget() == self.ui.left_column.menus.menu_help:
+                if help:
+                    self.ui.left_column.title_label.setText("Help: " + btn.text())
+                else:
+                    MainFunctions.toggle_left_column(self)
+
     # LEFT AND RIGHT COLUMNS / SHOW / HIDE
     # ///////////////////////////////////////////////////////////////
     def toggle_left_column(self):

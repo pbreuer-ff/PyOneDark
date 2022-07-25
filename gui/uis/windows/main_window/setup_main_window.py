@@ -51,7 +51,7 @@ class SetupMainWindow:
     add_left_menus = [
         {
             "btn_icon": "icon_home.svg",
-            "btn_id": "leftmenu_btn_page_1",
+            "btn_id": "lm_btn_page_1",
             "btn_text": "Start",
             "btn_tooltip": "Start",
             "show_top": True,
@@ -59,7 +59,7 @@ class SetupMainWindow:
         },
         {
             "btn_icon": "icon_connect.svg",
-            "btn_id": "leftmenu_btn_page_2",
+            "btn_id": "lm_btn_page_2",
             "btn_text": "Connect",
             "btn_tooltip": "Connect",
             "show_top": True,
@@ -67,7 +67,7 @@ class SetupMainWindow:
         },
         {
             "btn_icon": "icon_film.svg",
-            "btn_id": "leftmenu_btn_page_3",
+            "btn_id": "lm_btn_page_3",
             "btn_text": "Plan",
             "btn_tooltip": "Plan",
             "show_top": True,
@@ -75,7 +75,7 @@ class SetupMainWindow:
         },
         {
             "btn_icon": "icon_path.svg",
-            "btn_id": "leftmenu_btn_page_4",
+            "btn_id": "lm_btn_page_4",
             "btn_text": "Edit",
             "btn_tooltip": "Edit",
             "show_top": True,
@@ -83,7 +83,7 @@ class SetupMainWindow:
         },
         {
             "btn_icon": "icon_play_menu.svg",
-            "btn_id": "leftmenu_btn_page_5",
+            "btn_id": "lm_btn_page_5",
             "btn_text": "Fly",
             "btn_tooltip": "Fly",
             "show_top": True,
@@ -91,7 +91,7 @@ class SetupMainWindow:
         },
         {
             "btn_icon": "icon_save.svg",
-            "btn_id": "leftmenu_btn_page_6",
+            "btn_id": "lm_btn_page_6",
             "btn_text": "Review",
             "btn_tooltip": "Review",
             "show_top": True,
@@ -99,7 +99,7 @@ class SetupMainWindow:
         },
         {
             "btn_icon": "icon_settings.svg",
-            "btn_id": "leftmenu_btn_settings",
+            "btn_id": "lm_btn_settings",
             "btn_text": "Settings",
             "btn_tooltip": "Open settings",
             "show_top": False,
@@ -107,7 +107,7 @@ class SetupMainWindow:
         },
         {
             "btn_icon": "icon_info.svg",
-            "btn_id": "leftmenu_btn_help",
+            "btn_id": "lm_btn_help",
             "btn_text": "Help",
             "btn_tooltip": "Help",
             "show_top": False,
@@ -200,21 +200,15 @@ class SetupMainWindow:
         self.ui.active_page = 1
 
         # TODO make dep on active page
-        """ MainFunctions.set_left_col_menu(
+        """ MainFunctions.set_left_column_menu(
             self,
             menu=self.ui.left_column.menus.menu_1,
             title="Settings Left Column",
             icon_path=Functions.set_svg_icon("icon_settings.svg")
-        )
-        MainFunctions.set_right_col_menu(self, self.ui.right_column.menu_1) """
+        ) 
+        MainFunctions.set_right_column_menu(self, self.ui.right_column.menu_1) """
 
         # ///////////////////////////////////////////////////////////////
-        # EXAMPLE CUSTOM WIDGETS
-        # Here are added the custom widgets to pages and columns that
-        # were created using Qt Designer.
-        # This is just an example and should be deleted when creating
-        # your application.
-        #
         # OBJECTS FOR LOAD PAGES, LEFT AND RIGHT COLUMNS
         # You can access objects inside Qt Designer projects using
         # the objects below:
@@ -240,36 +234,28 @@ class SetupMainWindow:
         # LEFT COLUMN
         # ///////////////////////////////////////////////////////////////
 
-        # BTN 1
-        self.left_btn_1 = PyPushButton(
-            text="Btn 1",
-            radius=8,
-            color=self.themes["app_color"]["text_foreground"],
-            bg_color=self.themes["app_color"]["dark_one"],
-            bg_color_hover=self.themes["app_color"]["dark_three"],
-            bg_color_pressed=self.themes["app_color"]["dark_four"]
-        )
-        self.left_btn_1.setMaximumHeight(40)
-        self.ui.left_column.menus.btn_1_layout.addWidget(self.left_btn_1)
+        # MENU SETTINGS
+        # ///////////////////////////////////////////////////////////////
 
-        # BTN 2
-        self.left_btn_2 = PyPushButton(
-            text="Btn With Icon",
-            radius=8,
-            color=self.themes["app_color"]["text_foreground"],
-            bg_color=self.themes["app_color"]["dark_one"],
-            bg_color_hover=self.themes["app_color"]["dark_three"],
-            bg_color_pressed=self.themes["app_color"]["dark_four"]
-        )
-        self.icon = QIcon(Functions.set_svg_icon("icon_settings.svg"))
-        self.left_btn_2.setIcon(self.icon)
-        self.left_btn_2.setMaximumHeight(40)
-        self.ui.left_column.menus.btn_2_layout.addWidget(self.left_btn_2)
+        # TODO
+        # LABEL: SETTINGS WIP
+        self.lm_label_settings_wip = QLabel()
+        self.lm_label_settings_wip.setText('Settings are WIP...')
+        self.ui.left_column.menus.menu_settings_layout.addWidget(
+            self.lm_label_settings_wip)
 
-        # BTN 3 - Default QPushButton
-        self.left_btn_3 = QPushButton("Default QPushButton")
-        self.left_btn_3.setMaximumHeight(40)
-        self.ui.left_column.menus.btn_3_layout.addWidget(self.left_btn_3)
+        # MENU HELP
+        # ///////////////////////////////////////////////////////////////
+
+        # TODO
+        # LABEL: HELP WIP
+        self.lm_label_help_wip = QLabel()
+        self.lm_label_help_wip.setText('Help info is WIP...')
+        self.ui.left_column.menus.menu_help_layout.addWidget(
+            self.lm_label_help_wip)
+
+        # Hide settings on welcome page
+        self.ui.left_menu.show_settings(False)
 
         # ///////////////////////////////////////////////////////////////
         # PAGES
@@ -419,7 +405,7 @@ class SetupMainWindow:
             self.p3_btn_capture)
 
         # TABLE
-        self.p3_table_keyframes = PyTableWidget(
+        self.p3_table = PyTableWidget(
             radius=8,
             color=self.themes["app_color"]["text_foreground"],
             selection_color=self.themes["app_color"]["context_color"],
@@ -432,123 +418,95 @@ class SetupMainWindow:
             scroll_bar_btn_color=self.themes["app_color"]["dark_four"],
             context_color=self.themes["app_color"]["context_color"]
         )
-        self.p3_table_keyframes.setColumnCount(8)
-        self.p3_table_keyframes.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-        self.p3_table_keyframes.setSelectionMode(
+        self.p3_table.setColumnCount(8)
+        self.p3_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.p3_table.setSelectionMode(
             QAbstractItemView.ExtendedSelection)
-        self.p3_table_keyframes.setSelectionBehavior(
+        self.p3_table.setSelectionBehavior(
             QAbstractItemView.SelectRows)
 
-        # COLUMN HEADERS
-        self.p3_table_keyframes_col_1 = QTableWidgetItem()
-        self.p3_table_keyframes_col_1.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_1.setText("Time [s]")
+        headers = ['Time [s]',
+                   'North [m]',
+                   'East [m]',
+                   'Relalt [m]',
+                   'Pan [deg]',
+                   'Tilt [deg]',
+                   'Ease In',
+                   'Ease Out']
 
-        self.p3_table_keyframes_col_2 = QTableWidgetItem()
-        self.p3_table_keyframes_col_2.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_2.setText("North [m]")
+        self.p3_table.setColumnCount(len(headers))
+        self.p3_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.p3_table.setSelectionMode(
+            QAbstractItemView.ExtendedSelection)
+        self.p3_table.setSelectionBehavior(
+            QAbstractItemView.SelectRows)
 
-        self.p3_table_keyframes_col_3 = QTableWidgetItem()
-        self.p3_table_keyframes_col_3.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_3.setText("East [m]")
+        self.p3_table_cols = []
 
-        self.p3_table_keyframes_col_4 = QTableWidgetItem()
-        self.p3_table_keyframes_col_4.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_4.setText("Relalt [m]")
+        for col_id in range(len(headers)):
 
-        self.p3_table_keyframes_col_5 = QTableWidgetItem()
-        self.p3_table_keyframes_col_5.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_5.setText("Pan [deg]")
+            col = QTableWidgetItem()
+            col.setTextAlignment(Qt.AlignCenter)
+            col.setText(headers[col_id])
+            self.p3_table_cols.append(col)
+            self.p3_table.setHorizontalHeaderItem(col_id, col)
 
-        self.p3_table_keyframes_col_6 = QTableWidgetItem()
-        self.p3_table_keyframes_col_6.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_6.setText("Tilt [deg]")
+        # insert row after previous one
+        row_count = self.p3_table.rowCount()
+        self.p3_table.insertRow(row_count)
 
-        self.p3_table_keyframes_col_7 = QTableWidgetItem()
-        self.p3_table_keyframes_col_7.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_7.setText("Ease In")
+        # TODO: should the vars below be members?
 
-        self.p3_table_keyframes_col_8 = QTableWidgetItem()
-        self.p3_table_keyframes_col_8.setTextAlignment(Qt.AlignCenter)
-        self.p3_table_keyframes_col_8.setText("Ease Out")
+        # Time [s]
+        time = QTableWidgetItem()
+        time.setTextAlignment(Qt.AlignCenter)
+        time.setText(str(0))
+        self.p3_table.setItem(row_count, 0, time)
 
-        # SET COLUMN
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            0, self.p3_table_keyframes_col_1)
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            1, self.p3_table_keyframes_col_2)
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            2, self.p3_table_keyframes_col_3)
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            3, self.p3_table_keyframes_col_4)
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            4, self.p3_table_keyframes_col_5)
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            5, self.p3_table_keyframes_col_6)
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            6, self.p3_table_keyframes_col_7)
-        self.p3_table_keyframes.setHorizontalHeaderItem(
-            7, self.p3_table_keyframes_col_8)
+        # North [m]
+        north = QTableWidgetItem()
+        north.setTextAlignment(Qt.AlignCenter)
+        north.setText("pending")
+        self.p3_table.setItem(row_count, 1, north)
 
-        for row in range(9):
-            temp = row
+        # East [m]
+        east = QTableWidgetItem()
+        east.setTextAlignment(Qt.AlignCenter)
+        east.setText("pending")
+        self.p3_table.setItem(row_count, 2, east)
 
-            # insert row after previous one
-            row_number = self.p3_table_keyframes.rowCount()
-            self.p3_table_keyframes.insertRow(row_number)
+        # Relalt [m]
+        relalt = QTableWidgetItem()
+        relalt.setTextAlignment(Qt.AlignCenter)
+        relalt.setText("pending")
+        self.p3_table.setItem(row_count, 3, relalt)
 
-            # TODO: should the vars below be members?
+        # Pan [deg]
+        pan = QTableWidgetItem()
+        pan.setTextAlignment(Qt.AlignCenter)
+        pan.setText("pending")
+        self.p3_table.setItem(row_count, 4, pan)
 
-            # Time [s]
-            time = QTableWidgetItem()
-            time.setTextAlignment(Qt.AlignCenter)
-            time.setText(str(temp + 1))
-            self.p3_table_keyframes.setItem(row_number, 0, time)
+        # Tilt [deg]
+        tilt = QTableWidgetItem()
+        tilt.setTextAlignment(Qt.AlignCenter)
+        tilt.setText(str("pending"))
+        self.p3_table.setItem(row_count, 5, tilt)
 
-            # North [m]
-            north = QTableWidgetItem()
-            north.setTextAlignment(Qt.AlignCenter)
-            north.setText(str(temp + 2))
-            self.p3_table_keyframes.setItem(row_number, 1, north)
+        # Ease In
+        easein = QTableWidgetItem()
+        easein.setTextAlignment(Qt.AlignCenter)
+        easein.setText("Yes")
+        self.p3_table.setItem(row_count, 6, easein)
 
-            # East [m]
-            east = QTableWidgetItem()
-            east.setTextAlignment(Qt.AlignCenter)
-            east.setText(str(temp + 3))
-            self.p3_table_keyframes.setItem(row_number, 2, east)
-
-            # Relalt [m]
-            relalt = QTableWidgetItem()
-            relalt.setTextAlignment(Qt.AlignCenter)
-            relalt.setText(str(temp + 4))
-            self.p3_table_keyframes.setItem(row_number, 3, relalt)
-
-            # Pan [deg]
-            pan = QTableWidgetItem()
-            pan.setTextAlignment(Qt.AlignCenter)
-            pan.setText(str(temp + 5))
-            self.p3_table_keyframes.setItem(row_number, 4, pan)
-
-            # Tilt [deg]
-            tilt = QTableWidgetItem()
-            tilt.setTextAlignment(Qt.AlignCenter)
-            tilt.setText(str(temp + 6))
-            self.p3_table_keyframes.setItem(row_number, 5, tilt)
-
-            # Ease In
-            easein = QTableWidgetItem()
-            easein.setTextAlignment(Qt.AlignCenter)
-            easein.setText("Yes")
-            self.p3_table_keyframes.setItem(row_number, 6, easein)
-
-            # Ease Out
-            easeout = QTableWidgetItem()
-            easeout.setTextAlignment(Qt.AlignCenter)
-            easeout.setText("Yes")
-            self.p3_table_keyframes.setItem(row_number, 7, easeout)
+        # Ease Out
+        easeout = QTableWidgetItem()
+        easeout.setTextAlignment(Qt.AlignCenter)
+        easeout.setText("Yes")
+        self.p3_table.setItem(row_count, 7, easeout)
 
         self.ui.load_pages.p3_table_keyframes_layout.addWidget(
-            self.p3_table_keyframes)
+            self.p3_table)
 
         # LABEL: START POS
         self.p3_label_home_pos = QLabel()
@@ -1604,7 +1562,7 @@ class SetupMainWindow:
 
         self.ui.load_pages.p6_label_review_file_layout.addWidget(
             self.p6_label_review_file_name_prefix)
-        
+
         # LABEL: FILENAME
         self.p6_label_review_file_name = QLabel()
         self.p6_label_review_file_name.setText('XX.csv')
@@ -1629,6 +1587,8 @@ class SetupMainWindow:
 
         self.ui.load_pages.p6_graph_layout.addWidget(
             self.p6_graph)
+
+        # TODO: change displayed graph according to current (selected) column
 
         # ///////////////////////////////////////////////////////////////
 
@@ -1655,201 +1615,71 @@ class SetupMainWindow:
             scroll_bar_btn_color=self.themes["app_color"]["dark_four"],
             context_color=self.themes["app_color"]["context_color"]
         )
-        self.p6_table.setColumnCount(34)
-        self.p6_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        headers = ['current_kf_id',
+                   'current_kf_time',
+                   'time',
+                   'param',
+                   'north_m_sp',
+                   'north_m',
+                   'north_m_s_sp',
+                   'north_m_s',
+                   'north_m_s_cmd',
+                   'north_m_s2_sp',
+                   'east_m_sp',
+                   'east_m',
+                   'east_m_s_sp',
+                   'east_m_s',
+                   'east_m_s_cmd',
+                   'east_m_s2_sp',
+                   'down_m_sp',
+                   'down_m',
+                   'down_m_s_sp',
+                   'down_m_s',
+                   'down_m_s_cmd',
+                   'down_m_s2_sp',
+                   'yaw_deg',
+                   'yaw_deg_cmd',
+                   'lat_deg',
+                   'long_deg',
+                   'relalt_m',
+                   'pan_deg_sp',
+                   'pan_deg',
+                   'pan_deg_s_sp',
+                   'pan_deg_s_cmd',
+                   'tilt_deg_sp',
+                   'tilt_deg',
+                   'tilt_deg_s_sp',
+                   'tilt_deg_s_cmd']
+
+        self.p6_table.setColumnCount(len(headers))
+        self.p6_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
         self.p6_table.setSelectionMode(
             QAbstractItemView.ExtendedSelection)
         self.p6_table.setSelectionBehavior(
-            QAbstractItemView.SelectRows)
+            QAbstractItemView.SelectColumns)
 
-        # COLUMN HEADERS
-        self.p6_table_col_1 = QTableWidgetItem()
-        self.p6_table_col_1.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_1.setText("current_kf_id")
+        self.p6_table_cols = []
 
-        self.p6_table_col_2 = QTableWidgetItem()
-        self.p6_table_col_2.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_2.setText("current_kf_time")
+        for col_id in range(len(headers)):
 
-        self.p6_table_col_3 = QTableWidgetItem()
-        self.p6_table_col_3.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_3.setText("time")
+            col = QTableWidgetItem()
+            col.setTextAlignment(Qt.AlignCenter)
+            col.setText(headers[col_id])
+            self.p6_table_cols.append(col)
+            self.p6_table.setHorizontalHeaderItem(col_id, col)
 
-        self.p6_table_col_4 = QTableWidgetItem()
-        self.p6_table_col_4.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_4.setText("param")
+            for row_id in range(9):
+                row_count = self.p6_table.rowCount()
+                if (row_count < row_id):
+                    self.p6_table.insertRow(row_count)
 
-        self.p6_table_col_5 = QTableWidgetItem()
-        self.p6_table_col_5.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_5.setText("north_m_sp")
-
-        self.p6_table_col_6 = QTableWidgetItem()
-        self.p6_table_col_6.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_6.setText("north_m")
-
-        self.p6_table_col_7 = QTableWidgetItem()
-        self.p6_table_col_7.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_7.setText("north_m_s_sp")
-
-        self.p6_table_col_8 = QTableWidgetItem()
-        self.p6_table_col_8.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_8.setText("north_m_s")
-
-        self.p6_table_col_9 = QTableWidgetItem()
-        self.p6_table_col_9.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_9.setText("north_m_s_cmd")
-
-        self.p6_table_col_10 = QTableWidgetItem()
-        self.p6_table_col_10.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_10.setText("north_m_s2_sp")
-
-        self.p6_table_col_11 = QTableWidgetItem()
-        self.p6_table_col_11.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_11.setText("east_m_sp")
-
-        self.p6_table_col_12 = QTableWidgetItem()
-        self.p6_table_col_12.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_12.setText("east_m_s_sp")
-
-        self.p6_table_col_13 = QTableWidgetItem()
-        self.p6_table_col_13.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_13.setText("east_m_s")
-
-        self.p6_table_col_14 = QTableWidgetItem()
-        self.p6_table_col_14.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_14.setText("east_m_s_cmd")
-
-        self.p6_table_col_15 = QTableWidgetItem()
-        self.p6_table_col_15.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_15.setText("east_m_s2_sp")
-
-        self.p6_table_col_16 = QTableWidgetItem()
-        self.p6_table_col_16.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_16.setText("down_m_sp")
-
-        self.p6_table_col_17 = QTableWidgetItem()
-        self.p6_table_col_17.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_17.setText("down_m")
-
-        self.p6_table_col_18 = QTableWidgetItem()
-        self.p6_table_col_18.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_18.setText("down_m_s_sp")
-
-        self.p6_table_col_19 = QTableWidgetItem()
-        self.p6_table_col_19.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_19.setText("down_m_s")
-
-        self.p6_table_col_20 = QTableWidgetItem()
-        self.p6_table_col_20.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_20.setText("down_m_s_cmd")
-
-        self.p6_table_col_21 = QTableWidgetItem()
-        self.p6_table_col_21.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_21.setText("down_m_s2_sp")
-
-        self.p6_table_col_22 = QTableWidgetItem()
-        self.p6_table_col_22.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_22.setText("yaw_deg")
-
-        self.p6_table_col_23 = QTableWidgetItem()
-        self.p6_table_col_23.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_23.setText("yaw_deg_cmd")
-
-        self.p6_table_col_24 = QTableWidgetItem()
-        self.p6_table_col_24.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_24.setText("lat_deg")
-
-        self.p6_table_col_25 = QTableWidgetItem()
-        self.p6_table_col_25.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_25.setText("long_deg")
-
-        self.p6_table_col_26 = QTableWidgetItem()
-        self.p6_table_col_26.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_26.setText("relalt_m")
-
-        self.p6_table_col_27 = QTableWidgetItem()
-        self.p6_table_col_27.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_27.setText("pan_deg_sp")
-
-        self.p6_table_col_28 = QTableWidgetItem()
-        self.p6_table_col_28.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_28.setText("pan_deg")
-
-        self.p6_table_col_29 = QTableWidgetItem()
-        self.p6_table_col_29.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_29.setText("pan_deg_s_sp")
-
-        self.p6_table_col_30 = QTableWidgetItem()
-        self.p6_table_col_30.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_30.setText("pan_deg_s_cmd")
-
-        self.p6_table_col_31 = QTableWidgetItem()
-        self.p6_table_col_31.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_31.setText("tilt_deg_sp")
-
-        self.p6_table_col_32 = QTableWidgetItem()
-        self.p6_table_col_32.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_32.setText("tilt_deg")
-
-        self.p6_table_col_33 = QTableWidgetItem()
-        self.p6_table_col_33.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_33.setText("tilt_deg_s_sp")
-
-        self.p6_table_col_34 = QTableWidgetItem()
-        self.p6_table_col_34.setTextAlignment(Qt.AlignCenter)
-        self.p6_table_col_34.setText("tilt_deg_s_cmd")
-
-        # SET COLUMN
-        self.p6_table.setHorizontalHeaderItem(0, self.p6_table_col_1)
-        self.p6_table.setHorizontalHeaderItem(1, self.p6_table_col_2)
-        self.p6_table.setHorizontalHeaderItem(2, self.p6_table_col_3)
-        self.p6_table.setHorizontalHeaderItem(3, self.p6_table_col_4)
-        self.p6_table.setHorizontalHeaderItem(4, self.p6_table_col_5)
-        self.p6_table.setHorizontalHeaderItem(5, self.p6_table_col_6)
-        self.p6_table.setHorizontalHeaderItem(6, self.p6_table_col_7)
-        self.p6_table.setHorizontalHeaderItem(7, self.p6_table_col_8)
-        self.p6_table.setHorizontalHeaderItem(8, self.p6_table_col_9)
-        self.p6_table.setHorizontalHeaderItem(9, self.p6_table_col_10)
-        self.p6_table.setHorizontalHeaderItem(10, self.p6_table_col_11)
-        self.p6_table.setHorizontalHeaderItem(11, self.p6_table_col_12)
-        self.p6_table.setHorizontalHeaderItem(12, self.p6_table_col_13)
-        self.p6_table.setHorizontalHeaderItem(13, self.p6_table_col_14)
-        self.p6_table.setHorizontalHeaderItem(14, self.p6_table_col_15)
-        self.p6_table.setHorizontalHeaderItem(15, self.p6_table_col_16)
-        self.p6_table.setHorizontalHeaderItem(16, self.p6_table_col_17)
-        self.p6_table.setHorizontalHeaderItem(17, self.p6_table_col_18)
-        self.p6_table.setHorizontalHeaderItem(18, self.p6_table_col_19)
-        self.p6_table.setHorizontalHeaderItem(19, self.p6_table_col_20)
-        self.p6_table.setHorizontalHeaderItem(20, self.p6_table_col_21)
-        self.p6_table.setHorizontalHeaderItem(21, self.p6_table_col_22)
-        self.p6_table.setHorizontalHeaderItem(22, self.p6_table_col_23)
-        self.p6_table.setHorizontalHeaderItem(23, self.p6_table_col_24)
-        self.p6_table.setHorizontalHeaderItem(24, self.p6_table_col_25)
-        self.p6_table.setHorizontalHeaderItem(25, self.p6_table_col_26)
-        self.p6_table.setHorizontalHeaderItem(26, self.p6_table_col_27)
-        self.p6_table.setHorizontalHeaderItem(27, self.p6_table_col_28)
-        self.p6_table.setHorizontalHeaderItem(28, self.p6_table_col_29)
-        self.p6_table.setHorizontalHeaderItem(29, self.p6_table_col_30)
-        self.p6_table.setHorizontalHeaderItem(30, self.p6_table_col_31)
-        self.p6_table.setHorizontalHeaderItem(31, self.p6_table_col_32)
-        self.p6_table.setHorizontalHeaderItem(32, self.p6_table_col_33)
-        self.p6_table.setHorizontalHeaderItem(33, self.p6_table_col_34)
-
-        for row in range(9):
-            temp = row
-
-            # insert row after previous one
-            row_number = self.p6_table.rowCount()
-            self.p6_table.insertRow(row_number)
-
-            # TODO: should the var below be a member?
-
-            for col in range(34):
+                temp = row_id
 
                 entry = QTableWidgetItem()
                 entry.setTextAlignment(Qt.AlignCenter)
-                entry.setText(str(temp + 1))
-                self.p6_table.setItem(row_number, col, entry)
+                entry.setText(str(temp + 0.111))
+                self.p6_table.setItem(row_id, col_id, entry)
 
         self.ui.load_pages.p6_table_layout.addWidget(
             self.p6_table)
@@ -1858,9 +1688,9 @@ class SetupMainWindow:
         # RIGHT COLUMN
         # ///////////////////////////////////////////////////////////////
 
-        # BTN 1
-        self.right_btn_1 = PyPushButton(
-            text="Show Menu 2",
+        # BTN: EMERGENCY
+        self.rm_btn_emergency = PyPushButton(
+            text="Emergency",
             radius=8,
             color=self.themes["app_color"]["text_foreground"],
             bg_color=self.themes["app_color"]["dark_one"],
@@ -1868,17 +1698,27 @@ class SetupMainWindow:
             bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
         self.icon_right = QIcon(Functions.set_svg_icon("icon_arrow_right.svg"))
-        self.right_btn_1.setIcon(self.icon_right)
-        self.right_btn_1.setMaximumHeight(40)
-        self.right_btn_1.clicked.connect(lambda: MainFunctions.set_right_col_menu(
+        self.rm_btn_emergency.setIcon(self.icon_right)
+        self.rm_btn_emergency.setMaximumHeight(40)
+        self.rm_btn_emergency.setMinimumHeight(40)
+        self.rm_btn_emergency.clicked.connect(lambda: MainFunctions.set_right_column_menu(
             self,
             self.ui.right_column.menu_2
         ))
-        self.ui.right_column.btn_1_layout.addWidget(self.right_btn_1)
+        self.ui.right_column.menu_telem_layout.addWidget(self.rm_btn_emergency)
 
-        # BTN 2
-        self.right_btn_2 = PyPushButton(
-            text="Show Menu 1",
+        # TODO
+        # LABEL: TELEMETRY WIP
+        self.rm_label_telem_wip = QLabel()
+        self.rm_label_telem_wip.setText('Telemetry overview is WIP...')
+        self.ui.right_column.menu_telem_layout.addWidget(
+            self.rm_label_telem_wip)
+
+        # ///////////////////////////////////////////////////////////////
+
+        # BTN: TELEMETRY
+        self.rm_btn_telemetry = PyPushButton(
+            text="Telemetry",
             radius=8,
             color=self.themes["app_color"]["text_foreground"],
             bg_color=self.themes["app_color"]["dark_one"],
@@ -1886,19 +1726,25 @@ class SetupMainWindow:
             bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
         self.icon_left = QIcon(Functions.set_svg_icon("icon_arrow_left.svg"))
-        self.right_btn_2.setIcon(self.icon_left)
-        self.right_btn_2.setMaximumHeight(40)
-        self.right_btn_2.clicked.connect(
-            lambda: MainFunctions.set_right_col_menu(self, self.ui.right_column.menu_1))
-        self.ui.right_column.btn_2_layout.addWidget(self.right_btn_2)
+        self.rm_btn_telemetry.setIcon(self.icon_left)
+        self.rm_btn_telemetry.setMaximumHeight(40)
+        self.rm_btn_telemetry.setMinimumHeight(40)
+        self.rm_btn_telemetry.clicked.connect(
+            lambda: MainFunctions.set_right_column_menu(self, self.ui.right_column.menu_1))
+        self.ui.right_column.menu_emergency_layout.addWidget(
+            self.rm_btn_telemetry)
 
-        # ///////////////////////////////////////////////////////////////
-        # END - EXAMPLE CUSTOM WIDGETS
-        # ///////////////////////////////////////////////////////////////
+        # TODO
+        # LABEL: EMERGENCY WIP
+        self.rm_label_emergency_wip = QLabel()
+        self.rm_label_emergency_wip.setText('Emergency actions are WIP...')
+        self.ui.right_column.menu_emergency_layout.addWidget(
+            self.rm_label_emergency_wip)
 
     # RESIZE GRIPS AND CHANGE POSITION
     # Resize or change position when window is resized
     # ///////////////////////////////////////////////////////////////
+
     def resize_grips(self):
         if self.settings["custom_title_bar"]:
             self.left_grip.setGeometry(5, 10, 10, self.height())
