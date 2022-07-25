@@ -13,11 +13,11 @@
    id="Capa_1"
    x="0px"
    y="0px"
-   viewBox="0 0 11.999003 14.999993"
+   viewBox="0 0 14.999997 15.000007"
    xml:space="preserve"
-   sodipodi:docname="icon_play.svg"
-   width="11.999002"
-   height="14.999991"
+   sodipodi:docname="icon_stopX.svg"
+   width="14.999995"
+   height="15.000006"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"><metadata
    id="metadata41"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -36,90 +36,95 @@
    id="namedview37"
    showgrid="false"
    inkscape:zoom="32"
-   inkscape:cx="7.0107712"
-   inkscape:cy="5.310938"
+   inkscape:cx="13.076251"
+   inkscape:cy="7.8306693"
    inkscape:window-x="355"
    inkscape:window-y="1467"
    inkscape:window-maximized="1"
    inkscape:current-layer="g4" />
 <g
    id="g4"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 	
 <path
-   style="fill:none;stroke:#000000;stroke-width:1.34571481;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   d="m 190.68225,228.93494 10.63713,6.81756"
-   id="path848"
+   style="fill:none;stroke:#000000;stroke-width:1.24969685;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   d="m 198.46871,228.88624 1e-5,13.73251"
+   id="path888"
    inkscape:connector-curvature="0"
    sodipodi:nodetypes="cc" /><path
-   style="fill:none;stroke:#000000;stroke-width:1.34571481;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   d="m 190.68226,242.57005 10.63712,-6.81755"
+   style="fill:none;stroke:#000000;stroke-width:1.24969685;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   d="m 184.73623,242.61875 h 13.73249"
    id="path848-3"
    inkscape:connector-curvature="0"
    sodipodi:nodetypes="cc" /><path
-   style="fill:none;stroke:#000000;stroke-width:1.34571481;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-   d="m 190.68225,228.93494 -2e-5,13.63511"
-   id="path888-5"
+   style="fill:none;stroke:#000000;stroke-width:1.24969685;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   d="m 184.73622,228.88624 1e-5,13.73251"
+   id="path888-6"
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="cc" /><path
+   style="fill:none;stroke:#000000;stroke-width:1.24969685;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+   d="m 184.73622,228.88624 h 13.73249"
+   id="path848-3-7"
    inkscape:connector-curvature="0"
    sodipodi:nodetypes="cc" /></g>
 <g
    id="g6"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g8"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g10"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g12"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g14"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g16"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g18"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g20"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g22"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g24"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g26"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g28"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g30"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g32"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 <g
    id="g34"
-   transform="translate(-190.00131,-228.2525)">
+   transform="translate(-184.10247,-228.25249)">
 </g>
 </svg>
